@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author decoutd
+ *
+ */
+module exempleok {
+}
