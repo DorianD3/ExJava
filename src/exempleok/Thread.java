@@ -57,9 +57,18 @@ public class Thread {
 	public void ajoutFonction (Fonction f) {
 		this.Functionlist.add(f);
 	}
-	@Override
-	public String toString() {
-		return "Thread [Threadnom=" + Threadnom + ", Functionlist=" + Functionlist + "]";
+	public void displayThread () {
+		System.out.println("Thread " + this.Threadnom + ", Timebudget =" + this.Timebudget +" "+ this.Timebudgetunit +", Timeperiod ="+ this.Timeperiod +" "+ this.Timeperiodunit);
+		System.out.println("activation via : "+ this.Modeactivation);
+		System.out.println("contient les fonctions");
+		if (Functionlist.isEmpty()) {
+			System.out.println("noFunction");
+		} 
+		else {
+			for (Fonction f : Functionlist) {
+				f.dispayFonction();
+				System.out.println("");
+			}
+		}
 	}
-	
 }

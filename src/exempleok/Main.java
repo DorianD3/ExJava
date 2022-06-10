@@ -7,43 +7,46 @@ public class Main {
 
 	//initf1
 	ArrayList<String> paramf1 = new ArrayList<>();
-	ArrayList<Fonction> paramsf1 = new ArrayList<>();
-	Fonction f1 = new Fonction("f1", paramf1, FonctionKind.Route , paramsf1);
+	ArrayList<Fonction> subf1 = new ArrayList<>();
+	Fonction f1 = new Fonction("f1", paramf1, FonctionKind.Route , subf1);
 	Fonction f11 = new Fonction("f11",paramf1);
 	Fonction f12 = new Fonction("f12",paramf1);
 	System.out.println(f1.toString());
-	f1.addParameters("taille");
-	f1.addParameters("Poids");
-	f1.addParameters("Nom");	
+	f1.addParameters("in1");
+	f1.addParameters("in2");
+	f1.addParameters("out1");	
 	f1.ajoutsousFonction(f11);
 	f1.ajoutsousFonction(f12);
 	System.out.println(f1.toString());
 	
 	//initf2
 	ArrayList<String> paramf2 = new ArrayList<>();
-	Fonction f2 = new Fonction("f2 ",paramf2);
+	ArrayList<Fonction> subf2 = new ArrayList<>();
+	Fonction f2 = new Fonction("f2 ",paramf2, FonctionKind.Gather , subf2);
 	System.out.println(f1);
-	f2.addParameters("taille2");
-	f2.addParameters("Poids2");
-	f2.addParameters("Nom2");
+	f2.addParameters("in3");
+	f2.addParameters("out2");
+	f2.addParameters("in44");
 	System.out.println(f2);
 	
 	//initf3
 	ArrayList<String> paramf3 = new ArrayList<>();
-	Fonction f3 = new Fonction("f3",paramf3);
+	ArrayList<Fonction> subf3 = new ArrayList<>();
+	Fonction f3 = new Fonction("f3",paramf3, subf3);
 	System.out.println(f3);
-	f1.addParameters("taille3");
-	f1.addParameters("Poids3");
-	f1.addParameters("Nom3");
+	f3.addParameters("AGE");
+	f3.addParameters("Poids");
+	f3.addParameters("Nom");
 	System.out.println(f1);
 	
 	//initf4
 	ArrayList<String> paramf4 = new ArrayList<>();
-	Fonction f4 = new Fonction("f4 ",paramf4);
+	ArrayList<Fonction> subf4 = new ArrayList<>();
+	Fonction f4 = new Fonction("f4 ",paramf4, subf4);
 	System.out.println(f4);
-	f2.addParameters("taille4");
-	f2.addParameters("Poids4");
-	f2.addParameters("Nom4");
+	f4.addParameters("taille");
+	f4.addParameters("Poids");
+	f4.addParameters("Nom");
 	System.out.println(f4);
 	
 	//initt t1
@@ -82,7 +85,8 @@ public class Main {
 	ArrayList<Processus> Lp = new ArrayList<>(); 
 	Lp.add(p1);
 	Processeur pp1 = new Processeur("processeur1", Lp);
-	System.out.println(pp1);
-	System.out.println(f1.contentsFonction());
+	
+	//visualisation d'ensemble
+	pp1.displayProcesseur();
 	}
 }

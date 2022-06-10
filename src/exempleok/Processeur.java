@@ -27,10 +27,16 @@ public class Processeur {
 	public void addProcessus(Processus processus) {
 		this.ProcessusList.add(processus);
 	}
-
-	@Override
-	public String toString() {
-		return "Processeur " + ProcesseursNom + "\n ProcessusList=" + ProcessusList + "]";
+	public void displayProcesseur() {
+		System.out.println("processeur " + this.ProcesseursNom + " contains " + ProcessusList.size() + "processus \n" );
+		if (ProcessusList.isEmpty()) {
+			System.out.println("noProcessus");
+		}
+		else {
+			for (Processus p : ProcessusList) {
+				p.displayProcessus();
+			}
+		}
 	}
 	
 

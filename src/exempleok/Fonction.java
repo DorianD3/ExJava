@@ -15,18 +15,24 @@ public class Fonction {
 		this.Parameters = parameters;
 		this.subFonctionList = subfonctionlist;
 		this.Kind = kind;
-		//kind = FonctionKind.Duplicate;
-		//>ajouterkind
+
 	}
+	public Fonction(String Nom, ArrayList<String> parameters, ArrayList<Fonction> subfonctionlist) {
+		this.Nom = Nom;
+		this.Parameters = parameters;
+		this.subFonctionList = subfonctionlist;
+	}
+	
+	
 	public Fonction(String Nom, ArrayList<String> parameters) {
 		this.Nom = Nom;
 		this.Parameters = parameters;
-		//>ajouterkind
 	}
 	
 	public Fonction(String Nom) {
 		this.Nom = Nom;
 	}
+
 	//--------------getters&setters--------------------------------
 	//NomFonction
 	public String getNom() {
@@ -53,17 +59,26 @@ public class Fonction {
 	public void ajoutsousFonction (Fonction f) {
 		this.subFonctionList.add(f);
 	}
-	public String contentsFonction() {
-		return "Fonction [Nom=" + Nom + ", Kind=" + Kind + ", Parameters=" + Parameters + ", subFonctionList="
-				+ subFonctionList + "]";
+	public void displayParameters() {
+		System.out.println( this.Nom + " paramaeters are ");
+		for (String param : Parameters) {
+			System.out.println("- " + param);
+		}
 	}
-	
-	@Override
-	public String toString() {
-		return "Fonction [Nom=" + Nom + ", Kind=" + Kind + ", Parameters=" + Parameters + ", subFonctionList="
-				+ subFonctionList + "]";
+	public void displaySubfonction() {
+		System.out.println( this.Nom + "subFunctions are");
+		if (this.subFonctionList.isEmpty()) {
+			System.out.println("no subFunction");
+		}
+		else {
+			for (Fonction f : this.subFonctionList) {
+			System.out.println("- " + f.Nom);
+		    }
+		}
 	}
-	
-	
-
+	public void dispayFonction() {
+		System.out.println("Fonction " + this.Nom +", Kind : "+ this.Kind);
+		this.displayParameters();
+		this.displaySubfonction();
+	}
 }

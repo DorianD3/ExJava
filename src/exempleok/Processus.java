@@ -21,8 +21,17 @@ public class Processus {
 	public void addThread(Thread th) {
 		this.Threadlist.add(th);
 	}
-	@Override
-	public String toString() {
-		return "Processus [ProcessusNom=" + ProcessusNom + ", Threadlist=" + Threadlist + "]";
+	
+	public void displayProcessus() {
+		System.out.println("Processus "+ this.ProcessusNom + " contient les thread : \n");
+		if (Threadlist.isEmpty()) {
+		System.out.println("No thread");
+		}
+		else {
+			for (Thread th : Threadlist) {
+			th.displayThread();
+			System.out.println("\n");
+		    }
+		}
 	}
 }
